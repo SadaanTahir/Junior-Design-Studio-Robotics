@@ -24,7 +24,8 @@ echo "options rtl8188fu rtw_power_mgnt=0 rtw_enusbss=0" | sudo tee /etc/modprobe
 # Download and run ROS Noetic installation script
 wget -c https://raw.githubusercontent.com/qboticslabs/ros_install_noetic/master/ros_install_noetic.sh
 chmod +x ./ros_install_noetic.sh
-./ros_install_noetic.sh
+sudo ./ros_install_noetic.sh
+source /opt/ros/noetic/setup.bash
 
 # Install Python 3 pip and robomaster library
 sudo apt-get install -y python3-pip
@@ -33,4 +34,5 @@ pip3 install robomaster
 # Clone and install VS Code
 git clone https://github.com/JetsonHacksNano/installVSCode.git
 cd installVSCode
-./installVSCode.sh
+chmod +x ./installVSCode.sh
+sudo ./installVSCode.sh
